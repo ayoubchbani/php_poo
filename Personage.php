@@ -5,9 +5,25 @@ class Personage {
     public $vie = 80;
     public $atk = 20;
     public $def = 80;
+  
+    public $nom;
+    public function __construct($nom){
+        $this->nom = $nom ;
+    }
+    public function regenerer($vie = null){
 
-    public function regenerer($add){
+        if(is_null($vie)){
+            $this->vie = 100 ;
+        }else{
+           $this->vie += $vie; 
+        }
+     
+    }
 
-       return $this->vie += $add;
+    public function mort(){
+        return $this->vie <= 0 ;
+    }
+    public function attack($cible){
+        var_dump($cible);
     }
 }
