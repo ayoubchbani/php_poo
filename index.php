@@ -25,3 +25,6 @@ echo '<br>' ;
 
 
 $anass->attack($ayoub); 
+
+$ayoub->setNom('ilyas') ; 
+var_dump($ayoub->getNom());

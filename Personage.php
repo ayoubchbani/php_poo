@@ -2,11 +2,11 @@
 
 class Personage {
 
-    public $vie = 80;
-    public $atk = 20;
-    public $def = 80;
+    private $vie = 80;
+    private $atk = 20;
+    private $def = 80;
   
-    public $nom;
+    private $nom;
     public function __construct($nom){
         $this->nom = $nom ;
     }
@@ -25,5 +25,21 @@ class Personage {
     }
     public function attack($cible){
         var_dump($cible);
+    }
+
+    public function getNom(){
+        return $this->nom;
+    }
+    public function getVie(){
+        return $this->vie;
+    }
+    public function getAtk(){
+        return $this->atk; 
+    }
+    public function getDef(){
+        return $this->def; 
+    }
+    public function setNom($newNom){
+        $this->nom = $newNom ;
     }
 }
