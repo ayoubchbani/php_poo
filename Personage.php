@@ -7,13 +7,15 @@ class Personage {
     private $def = 80;
   
     private $nom;
+    const MAXVIE = 100 ;
+
     public function __construct($nom){
         $this->nom = $nom ;
     }
     public function regenerer($vie = null){
 
         if(is_null($vie)){
-            $this->vie = 100 ;
+            $this->vie = self::MAXVIE ;
         }else{
            $this->vie += $vie; 
         }
