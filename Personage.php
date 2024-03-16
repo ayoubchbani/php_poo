@@ -2,9 +2,9 @@
 
 class Personage {
 
-    private $vie = 80;
-    private $atk = 20;
-    private $def = 80;
+    protected $vie = 80;
+    protected $atk = 20;
+    protected $def = 80;
   
     private $nom;
     const MAXVIE = 100 ;
@@ -26,7 +26,8 @@ class Personage {
         return $this->vie <= 0 ;
     }
     public function attack($cible){
-        var_dump($cible);
+       $cible->vie = $this->atk;
+       $cible->empecher_negatif();
     }
 
     public function getNom(){
@@ -43,5 +44,11 @@ class Personage {
     }
     public function setNom($newNom){
         $this->nom = $newNom ;
+    }
+    public function empecher_negatif(){
+      if($this->vie<0){
+        $this->vie =0;
+      }
+
     }
 }
