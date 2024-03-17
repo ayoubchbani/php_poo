@@ -10,7 +10,7 @@ class Form
     /**
      * @var array Données utilisé par le formulaire 
      */
-    private $data = array();
+    protected $data = array();
     /**
      * @var string Tag utilisé pour entouré les champs
      */
@@ -36,7 +36,7 @@ class Form
     {
         return  $this->surround('<input type="text" name="' . $name . '"  value="' . $this->getValue($name) . '">  ');
     }
-    private function getValue($index)
+    protected function getValue($index)
     {
 
         return isset($this->data[$index]) ?  $this->data[$index] : null;
@@ -47,3 +47,5 @@ class Form
         return $this->surround('<button type="submit" >Envoyer</button>');
     }
 }
+
+?>
